@@ -43,7 +43,8 @@ let NombreEspaceString =  (texte) => {
     return count;
 }
 let InverseString =  (texte) => {
- 
+    // sting -> array => invers array => InvArray -> string
+    return texte.split('').reverse().join('')
 }
 
 /**
@@ -53,17 +54,21 @@ let calculPuissance =  (x, y) => {
     return Math.pow(x, y);
 }
 let valeurAbsolue =  (nombre) => {
-
+    return Math.abs(nombre);
 }
 let valeurAbsolueArray =  (array) => {
-
+    let arrayNew = [];
+    for (let elem of array) {
+        arrayNew.push(Math.abs(elem));
+    }
+    return arrayNew;
 }
 let sufaceCercle =  (rayon) => {
-
+    return Math.round(Math.PI * Math.pow(rayon, 2));
 }
 let hypothenuse =  (ab, ac) => {
-
+    return Math.sqrt(ab * ab + ac * ac);
 }
 let calculIMC =  (poids, taille) => {
-
+    return +(poids/Math.pow(taille, 2)).toFixed(2);
 }
