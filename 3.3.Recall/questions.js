@@ -1,33 +1,40 @@
 let selectElementsStartingWithA = (array) => {
-    return 'Write your method here';
+    return array.filter(el => el[0] === 'a');
 }
 
 let selectElementsStartingWithVowel = (array) => {
-    return 'Write your method here';
+    return array.filter(el => /^[aeiou]/i.test(el));
 }
 
 let removeNullElements = (array) => {
-    return 'Write your method here';
+    return array.filter(el => el != null);
 }
 
 let removeNullAndFalseElements = (array) => {
-    return 'Write your method here';
+    return array.filter(el => el !== null && el !== false);
 }
 
 let reverseWordsInArray = (array) => {
-    return 'Write your method here';
+    let arrNew = [];
+    for(let elem of array ) {
+        arrNew.push(elem.split('').reverse().join(''));
+    }
+    return arrNew;
 }
 
 let everyPossiblePair = (array) => {
-    return 'Write your method here';
+    
 }
 
 let allElementsExceptFirstThree = (array) => {
-    return 'Write your method here';
+    array.splice(0,3);
+    return array;
+
 }
 
 let addElementToBeginning = (array, element) => {
-    return 'Write your method here';
+    array.unshift(element);
+    return array;
 }
 
 let sortByLastLetter = (array) => {
@@ -35,11 +42,13 @@ let sortByLastLetter = (array) => {
 }
 
 let getFirstHalf = (string) => {
-    return 'Write your method here';
+    let newStr = string.slice(0, Math.round(string.length / 2));
+    return newStr;
 }
 
 let makeNegative = (number) => {
-    return 'Write your method here';
+    if (number > 0) number*=-1;
+    return number;
 }
 
 let numberOfPalindromes = (array) => {
@@ -47,15 +56,27 @@ let numberOfPalindromes = (array) => {
 }
 
 let shortestWord = (array) => {
-    return 'Write your method here';
+    let min = 1000; let minStr;
+    for (let elem of array) {
+        if (elem.length < min) {min = elem.length; minStr = elem;}
+    }
+    return minStr;
 }
 
 let longestWord = (array) => {
-    return 'Write your method here';
+    let max = 0; let maxStr;
+    for (let elem of array) {
+        if (elem.length > max) {max = elem.length; maxStr = elem;}
+    }
+    return maxStr;
 }
 
 let sumNumbers = (array) => {
-    return 'Write your method here';
+    let sum = 0;
+    for (let elem of array) {
+        sum+=elem;
+    }
+    return sum;
 }
 
 let repeatElements = (array) => {
