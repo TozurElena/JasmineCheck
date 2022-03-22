@@ -68,8 +68,7 @@ let getFirstHalf = (string) => {
 };
 
 let makeNegative = (number) => {
-  if (number > 0) number *= -1;
-  return number;
+  return  (number > 0) ? number*= -1 : number;
 };
 
 let numberOfPalindromes = (array) => {
@@ -113,8 +112,7 @@ let sumNumbers = (array) => {
 };
 
 let repeatElements = (array) => {
-  let newArray = array.concat(array);
-  return newArray;
+  return array.concat(array);
 };
 
 let stringToNumber = (string) => {
@@ -184,8 +182,7 @@ let sumKeysAndValues = (object) => {
 };
 
 let removeCapitals = (string) => {
-  let newString = string.replace(/[A-Z]+/g, "");
-  return newString;
+  return string.replace(/[A-Z]+/g, "");
 };
 
 let roundUp = (number) => {
@@ -213,28 +210,29 @@ let getDomainName = (string) => {
   let result = domain.slice(0, indEnd);
   return result;
 };
-// pas finir!!!!!
+// https://flexiple.com/javascript-capitalize-first-letter/
+
 let titleize = (string) => {
-  let newString = string[0].toUpperCase();
-  for (let i = 1; i < string.length - 1; i++) {
-    if (string[i] === ' ' && (string[i + 1] !== 't' || string[i + 1] !== 'a')) {
-      newString = newString + ' ' + string[i + 1].toUpperCase();
-    } else newString = newString + string[i];
+  
+  const arr = string.split(' ');
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i].charAt(0) != 't' && arr[i].charAt(0)!= 'a') {
+      arr[i] =  arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+    }
   }
-  newString.replace('. a','. A');
-  return newString;
+  let str2 = arr.join(' ');
+  let result = str2[0].toUpperCase() + str2.slice(1);
+  result = result.replace('. a','. A');
+
+  return result;
 };
 
 // Here in the above code test() function is used. The Regular expression is /[!@#$%^&*()_+-=[]{};’:”\|,.<>\/?]+/
 // If any of the characters from the regular expression is found within the string, true is returned. Else false is returned.
 let checkForSpecialCharacters = (string) => {
   let spChars = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    if(spChars.test(string)){
-      return true;
-    } else {
-      return false;
-    };
-
+  return (spChars.test(string) ? true : false);
 };
 
 let squareRoot = (number) => {

@@ -8,8 +8,8 @@ let remplaceECar = (texte) => {
     return text;
 }
 let concatString = (texte1, texte2) => {
-    let text = texte1 + texte2;
-    return text;
+    
+    return texte1 + texte2;
 
 }
 let afficherCar5 =  (texte) => {
@@ -32,9 +32,9 @@ let IsString =  (texte) => {
 }
 
 let AfficherExtensionString =  (texte) => {
-    let index = texte.indexOf('.');
-    return texte.slice(index + 1);
+    return texte.slice(texte.indexOf('.') + 1);
 }
+
 let NombreEspaceString =  (texte) => {
     count = 0;
     for (let i = 0; i < texte.length; i++) {
